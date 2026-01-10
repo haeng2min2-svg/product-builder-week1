@@ -18,6 +18,11 @@ const translations = {
         etc: "기타",
         all: "전체",
         recommendation: (food, emoji) => `오늘의 추천 메뉴는 ${emoji} ${food} 입니다!`,
+        navHome: "홈",
+        navAbout: "사이트 소개",
+        navContact: "문의하기",
+        footerCopyright: "&copy; 2026 WhatToEat. All Rights Reserved.",
+        footerPrivacy: "개인정보처리방침",
         menus: {
             korean: ['김치찌개', '비빔밥', '된장찌개', '불고기', '떡볶이'],
             etc: ['카레', '라면', '샌드위치', '타코', '쌀국수']
@@ -29,6 +34,11 @@ const translations = {
         etc: "Etc",
         all: "All",
         recommendation: (food, emoji) => `Today's recommended menu is ${emoji} ${food}!`,
+        navHome: "Home",
+        navAbout: "About",
+        navContact: "Contact",
+        footerCopyright: "&copy; 2026 WhatToEat. All Rights Reserved.",
+        footerPrivacy: "Privacy Policy",
         menus: {
             korean: ['Kimchi Jjigae', 'Bibimbap', 'Doenjang Jjigae', 'Bulgogi', 'Tteokbokki'],
             etc: ['Curry', 'Ramen', 'Sandwich', 'Taco', 'Pho']
@@ -41,12 +51,32 @@ let currentLanguage = 'ko';
 function setLanguage(lang) {
     currentLanguage = lang;
     const t = translations[lang];
-    document.querySelector('h1').textContent = t.title;
-    document.querySelector('#korean .button-text').textContent = t.korean;
-    document.querySelector('#etc .button-text').textContent = t.etc;
-    document.querySelector('#all .button-text').textContent = t.all;
-    document.getElementById('result').textContent = '';
+
+    // Update dynamic navigation first
+    if (typeof renderNavigation === 'function') {
+        renderNavigation(lang);
+    }
+
+    // Update page-specific content
+    const h1 = document.querySelector('h1');
+    if (h1) h1.textContent = t.title;
+
+    const koreanButton = document.querySelector('#korean .button-text');
+    if (koreanButton) koreanButton.textContent = t.korean;
+    
+    const etcButton = document.querySelector('#etc .button-text');
+    if (etcButton) etcButton.textContent = t.etc;
+
+    const allButton = document.querySelector('#all .button-text');
+    if (allButton) allButton.textContent = t.all;
+
+    const resultDiv = document.getElementById('result');
+    if (resultDiv) resultDiv.textContent = '';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage('ko');
+});
 
 document.getElementById('korean').addEventListener('click', () => recommendFood('korean'));
 document.getElementById('etc').addEventListener('click', () => recommendFood('etc'));
@@ -93,5 +123,3 @@ if (currentTheme) {
         toggleSwitch.checked = true;
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => setLanguage('ko'));

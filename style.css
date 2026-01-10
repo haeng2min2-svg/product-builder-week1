@@ -72,6 +72,46 @@ body {
     color: #1abc9c;
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #34495e;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .site-nav {
+        position: relative;
+    }
+}
+
+
 .container {
     text-align: center;
     background-color: var(--container-bg);
