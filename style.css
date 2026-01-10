@@ -93,6 +93,10 @@ h1 {
     box-shadow: 0 4px 10px rgba(76, 175, 80, 0.5);
 }
 
+.button-text {
+    margin-left: 8px;
+}
+
 #result {
     margin-top: 20px;
     font-size: 1.5rem;
