@@ -4,7 +4,6 @@
     --container-bg: white;
     --button-bg: #4CAF50;
     --button-text: white;
-    --lotto-ball-text: white;
     --box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
@@ -38,33 +37,45 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.language-switcher-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.language-switcher-container button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.language-switcher-container button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.5);
+}
+
 h1 {
     color: var(--text-color);
     font-size: 2.5rem;
     margin-bottom: 30px;
 }
 
-.lotto-numbers-container {
+.food-categories-container {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-bottom: 30px;
 }
 
-lotto-ball {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: var(--lotto-ball-text);
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 -3px 5px rgba(0,0,0,0.3);
-}
-
-#generate-btn {
+.food-categories-container button {
     background-color: var(--button-bg);
     color: var(--button-text);
     padding: 15px 30px;
@@ -76,10 +87,16 @@ lotto-ball {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-#generate-btn:hover {
+.food-categories-container button:hover {
     background-color: #45a049;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(76, 175, 80, 0.5);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: var(--text-color);
 }
 
 /* Theme Switcher */

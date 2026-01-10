@@ -8,9 +8,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <div id="lotto-numbers" class="lotto-numbers-container"></div>
-        <button id="generate-btn">Generate Numbers</button>
+        <div id="language-switcher" class="language-switcher-container">
+            <button onclick="setLanguage('ko')">Korean</button>
+            <button onclick="setLanguage('en')">English</button>
+        </div>
+        <h1>오늘 저녁 뭐 먹지?</h1>
+        <div id="food-categories" class="food-categories-container">
+            <button id="korean">한식</button>
+            <button id="chinese">중식</button>
+            <button id="japanese">일식</button>
+            <button id="western">양식</button>
+        </div>
+        <div id="result"></div>
     </div>
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">
