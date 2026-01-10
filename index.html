@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>오늘 저녁 뭐 먹지?</title>
     <meta name="google-adsense-account" content="ca-pub-3048640191852765">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3048640191852765"
      crossorigin="anonymous"></script>
+    <header class="site-header"></header>
     <div class="container">
         <div id="language-switcher" class="language-switcher-container">
             <button onclick="setLanguage('ko')">Korean</button>
@@ -22,11 +23,10 @@
             <button id="all">🎲 <span class="button-text">전체</span></button>
         </div>
         <div id="result"></div>
-        <p><a href="contact.html">Partnership Inquiry</a></p>
-
+        
         <details>
             <summary>댓글 보기 / View Comments</summary>
-            <div id="disqus_thread"></div>
+            <div id="disqus_thread" style="margin-top: 20px;"></div>
             <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -53,6 +53,8 @@
             <div class="slider round"></div>
         </label>
     </div>
+    <footer class="site-footer"></footer>
     <script src="main.js"></script>
+    <script src="navigation.js"></script>
 </body>
 </html>
