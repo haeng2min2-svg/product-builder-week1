@@ -72,6 +72,13 @@ body {
     color: #1abc9c;
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
 .hamburger {
     display: none;
     background: none;
@@ -88,9 +95,11 @@ body {
         width: 100%;
         background-color: #34495e;
         position: absolute;
-        top: 60px; /* Adjust based on header height */
+        top: 100%; /* Position right below the header */
         left: 0;
-        padding: 20px 0;
+        padding: 10px 0;
+        z-index: 100;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .nav-links.active {
@@ -99,17 +108,14 @@ body {
 
     .nav-links li {
         text-align: center;
-        padding: 10px 0;
+        padding: 12px 0;
     }
 
     .hamburger {
         display: block;
     }
-
-    .site-nav {
-        position: relative;
-    }
 }
+
 
 
 .container {
@@ -204,18 +210,13 @@ h1 {
     margin-left: 8px;
 }
 
+
 #result {
     margin-top: 20px;
     font-size: 1.5rem;
     color: var(--text-color);
 }
 
-/* Theme Switcher */
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
 
 .theme-switch {
     display: inline-block;
@@ -265,6 +266,36 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.theme-switch .slider .light-icon {
+    display: inline;
+}
+.theme-switch .slider .dark-icon {
+    display: none;
+}
+
+input:checked + .slider .light-icon {
+    display: none;
+}
+input:checked + .slider .dark-icon {
+    display: inline;
+}
+
+.slider span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.slider .light-icon {
+    left: 8px;
+}
+
+.slider .dark-icon {
+    right: 8px;
+}
+
 
 /* Form styles */
 form {
