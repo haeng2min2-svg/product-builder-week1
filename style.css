@@ -154,3 +154,58 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+form label {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: var(--button-bg);
+    outline: none;
+}
+
+form button[type="submit"] {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.5);
+}
